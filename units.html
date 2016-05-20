@@ -3,9 +3,7 @@
 <title>Anson's Unit Converter</title>
 <script type="text/javascript">
 const precision = 3;
-
-function buildEverything() {
-    var units = [
+const units = [
         {name: "Speed",
         conversions:[
             {unitName:"knots",factor:1},
@@ -19,6 +17,7 @@ function buildEverything() {
         ]}
     ];
 
+function buildEverything() {
     var html = "";
     for (var unitIndex = 0; unitIndex < units.length; unitIndex++) {
         const unit = units[unitIndex];
