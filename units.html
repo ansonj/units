@@ -2,6 +2,8 @@
 <head>
 <title>Anson's Unit Converter</title>
 <script type="text/javascript">
+const precision = 3;
+
 function buildEverything() {
     var units = [
         {name: "Speed",
@@ -18,14 +20,24 @@ function buildEverything() {
     ];
 
     var html = "";
-    for (var i = 0; i < units.length; i++) {
-        unit = units[i];
-        html += unit.name + "<br>";
-        for (var j = 0; j < unit.conversions.length; j++) {
-            conversion = unit.conversions[j];
-            html += conversion.unitName + " (" + conversion.factor + ")<br>";
+    for (var unitIndex = 0; unitIndex < units.length; unitIndex++) {
+        const unit = units[unitIndex];
+        html += "<table border=2 cellpadding=10><tr><th colspan=" + unit.conversions.length + " bgcolor=eeeeee>" + unit.name;
+        html += "<tr>";
+        for (var conversionIndex = 0; conversionIndex < unit.conversions.length; conversionIndex++) {
+            html += "<th>" + unit.conversions[conversionIndex].unitName;
         }
-        html += "<br><br>";
+        const input = document.unitsForm.input.value;
+        for (var conversionIndex = 0; conversionIndex < unit.conversions.length; conversionIndex++) {
+            html += "<tr>";
+            const currentValue = input / unit.conversions[conversionIndex].factor;
+            for (var columnIndex = 0; columnIndex < unit.conversions.length; columnIndex++) {
+                const factor = unit.conversions[columnIndex].factor;
+                const result = currentValue * factor;
+                html += "<td style=\"text-align:right;\">" + result.toFixed(precision);
+            }
+        }
+        html += "</table><br><br>";
     }
     return html;
 }
