@@ -40,7 +40,7 @@ function buildEverything() {
     for (var unitIndex = 0; unitIndex < units.length; unitIndex++) {
         const unit = units[unitIndex];
         html += "<table border=2 cellpadding=10><tr><th colspan=" + unit.conversions.length + " bgcolor=eeeeee>" + unit.name;
-        html += "<tr>";
+        html += "<tr bgcolor=eeeeee>";
         for (var conversionIndex = 0; conversionIndex < unit.conversions.length; conversionIndex++) {
             html += "<th>" + unit.conversions[conversionIndex].unitName;
         }
