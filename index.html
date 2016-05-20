@@ -6,24 +6,24 @@ const precision = 3;
 const units = [
         {name: "Speed",
         conversions:[
-            {unitName:"knots",factor:1},
+            {unitName:"knots",factor:1.0},
             {unitName:"MPH", factor:1.150779448}
         ]},
         {name: "Weight",
         conversions:[
             {unitName:"kg",factor:0.45359237},
-            {unitName:"lbs",factor:1}
+            {unitName:"lbs",factor:1.0}
         ]},
         {name: "Fuel (avgas/100LL, @ 6 lbs/gallon)",
         conversions:[
-            {unitName:"gallons",factor:1},
-            {unitName:"lbs",factor:6},
+            {unitName:"gallons",factor:1.0},
+            {unitName:"lbs",factor:6.0},
             {unitName:"L",factor:3.785411784},
             {unitName:"kg",factor:(6*0.45359237)}
         ]},
         {name: "Fuel (jet, @ 6.75 lbs/gallon)",
         conversions:[
-            {unitName:"gallons",factor:1},
+            {unitName:"gallons",factor:1.0},
             {unitName:"lbs",factor:6.75},
             {unitName:"L",factor:3.785411784},
             {unitName:"kg",factor:(6.75*0.45359237)}
@@ -32,7 +32,7 @@ const units = [
         conversions:[
             {unitName:"feet", factor:5280},
             {unitName:"meters", factor:1609.344},
-            {unitName:"miles", factor:1},
+            {unitName:"miles", factor:1.0},
             {unitName:"nautical miles", factor:0.8689762419}
         ]}
     ];
