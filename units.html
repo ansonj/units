@@ -9,10 +9,28 @@ const units = [
             {unitName:"knots",factor:1},
             {unitName:"MPH", factor:1.150779448}
         ]},
+        {name: "Weight",
+        conversions:[
+            {unitName:"kg",factor:0.45359237},
+            {unitName:"lbs",factor:1}
+        ]},
+        {name: "Fuel (avgas/100LL, @ 6 lbs/gallon)",
+        conversions:[
+            {unitName:"gallons",factor:1},
+            {unitName:"lbs",factor:6},
+            {unitName:"L",factor:3.785411784},
+            {unitName:"kg",factor:(6*0.45359237)}
+        ]},
+        {name: "Fuel (jet, @ 6.75 lbs/gallon)",
+        conversions:[
+            {unitName:"gallons",factor:1},
+            {unitName:"lbs",factor:6.75},
+            {unitName:"L",factor:3.785411784},
+            {unitName:"kg",factor:(6.75*0.45359237)}
+        ]},
         {name: "Distance",
         conversions:[
             {unitName:"feet", factor:1},
-            {unitName:"inches", factor:12},
             {unitName:"meters", factor:0.3048}
         ]}
     ];
