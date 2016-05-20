@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Anson's Unit Converter</title>
+<script type="text/javascript">
+function buildEverything() {
+    var units = [
+        {name: "Speed",
+        conversions:[
+            {unitName:"knots",factor:1},
+            {unitName:"MPH", factor:1.150779448}
+        ]},
+        {name: "Distance",
+        conversions:[
+            {unitName:"feet", factor:1},
+            {unitName:"inches", factor:12},
+            {unitName:"meters", factor:0.3048}
+        ]}
+    ];
+
+    var html = "";
+    for (var i = 0; i < units.length; i++) {
+        unit = units[i];
+        html += unit.name + "<br>";
+        for (var j = 0; j < unit.conversions.length; j++) {
+            conversion = unit.conversions[j];
+            html += conversion.unitName + " (" + conversion.factor + ")<br>";
+        }
+        html += "<br><br>";
+    }
+    return html;
+}
+
+function update() {
+    document.getElementById("output").innerHTML = buildEverything();
+    setTimeout("update()", 1000);
+}
+</script>
+</head>
+<body onLoad="update();">
+<form name="unitsForm">
+<input name="input" value="100" style="position:fixed;top:50;right:50;"/>
+</form>
+<div id="output">
+</div>
+</body>
+</html>
