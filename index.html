@@ -53,7 +53,8 @@ function buildEverything() {
             for (var columnIndex = 0; columnIndex < unit.conversions.length; columnIndex++) {
                 const factor = unit.conversions[columnIndex].factor;
                 const result = currentValue * factor;
-                html += "<td style=\"text-align:right;\">" + result.toFixed(precision);
+                const highlightString = conversionIndex == columnIndex ? " bgcolor=f6f6f6" : "";
+                html += "<td style=\"text-align:right;\"" + highlightString + ">" + result.toFixed(precision);
             }
         }
         html += "</table><br>";
