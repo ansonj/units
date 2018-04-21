@@ -1,6 +1,11 @@
 <html>
 <head>
 <title>Anson's Unit Converter</title>
+<style type="text/css">
+table {
+    display: inline;
+}
+</style>
 <script type="text/javascript">
 const precision = 3;
 const units = [
@@ -57,7 +62,7 @@ function buildEverything() {
                 html += "<td style=\"text-align:right;\"" + highlightString + ">" + result.toFixed(precision);
             }
         }
-        html += "</table><br>";
+        html += "</table>&nbsp;&nbsp;";
     }
     return html;
 }
@@ -69,15 +74,12 @@ function update() {
 </script>
 </head>
 <body onLoad="update();">
+<p>
+Enter a value to convert. Results will update automatically as you type.
+</p>
 <form name="unitsForm" onSubmit="return false;">
-<input name="input" value="100.0" style="position:fixed;top:50;right:50;background-color:#ffffcc"/>
+<input name="input" value="100.0" style="background-color:#ffffcc"/>
 </form>
-<p>
-Enter a value to convert in the floating box to the right.
-</p>
-<p>
-Conversions update automatically as you type.
-</p>
 <div id="output">
 </div>
 <hr>
