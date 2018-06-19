@@ -42,6 +42,10 @@ const units = [
         ]}
     ];
 
+function currentInput() {
+    return document.unitsForm.input.value;
+}
+
 function buildEverything() {
     var html = "";
     for (var unitIndex = 0; unitIndex < units.length; unitIndex++) {
@@ -51,7 +55,7 @@ function buildEverything() {
         for (var conversionIndex = 0; conversionIndex < unit.conversions.length; conversionIndex++) {
             html += "<th>" + unit.conversions[conversionIndex].unitName;
         }
-        const input = document.unitsForm.input.value;
+        const input = currentInput();
         for (var conversionIndex = 0; conversionIndex < unit.conversions.length; conversionIndex++) {
             html += "<tr>";
             const currentValue = input / unit.conversions[conversionIndex].factor;
