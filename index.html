@@ -42,6 +42,8 @@ const units = [
         ]}
     ];
 
+var lastCalculationInput = undefined;
+
 function currentInput() {
     return document.unitsForm.input.value;
 }
@@ -72,7 +74,11 @@ function buildEverything() {
 }
 
 function update() {
-    document.getElementById("output").innerHTML = buildEverything();
+    const input = currentInput();
+    if (input != lastCalculationInput) {
+        document.getElementById("output").innerHTML = buildEverything();
+        lastCalculationInput = input;
+    }
     setTimeout("update()", 1000);
 }
 </script>
